@@ -15,6 +15,21 @@ export default class Counter extends React.Component{
         //     return this.state.count = state.count + 1;
         // }, 1000);
 
+        // setInterval(() => {
+        //     this.setState((state) => {
+        //         return {
+        //             count: state.count + this.props.increment
+        //         }
+        //     });
+        // }, this.props.interval);
+    }
+    
+
+    render() {
+        return <CounterDisplay count={this.state.count}/>
+    }
+
+    componentDidMount() {
         setInterval(() => {
             this.setState((state) => {
                 return {
@@ -22,11 +37,6 @@ export default class Counter extends React.Component{
                 }
             });
         }, this.props.interval);
-    }
-    
-
-    render() {
-        return <CounterDisplay count={this.state.count}/>
     }
 }
 
