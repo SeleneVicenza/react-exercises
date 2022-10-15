@@ -20,14 +20,13 @@ export default class Login extends React.Component {
         })
     }
 
-
     render() {
         return (
                 <form>
                     <input type="text" name='user' value={this.state.user} onChange={this.handleInput}></input>
                     <input type="password" name='pass'  value={this.state.pass} onChange={this.handleInput}></input>
                     <input type="checkbox" name='remember' checked={this.state.remember} onChange={this.handleInput}></input>
-                    
+                    <button disabled={!this.state.user || !this.state.pass}>Login</button>
                 </form>
         )
     }
