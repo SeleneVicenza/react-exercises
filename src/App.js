@@ -14,7 +14,7 @@ import {Welcome} from "./Welcome";
 export class App extends React.Component {
     render(){
         return(
-            <Container>
+            <Container title="My App">
                <Hello />
                <Welcome name={<strong>Selene</strong>} />
                <Counter />

@@ -4,7 +4,13 @@ export default class Container extends React.Component {
     render() {
         return (
             <div className="container">
-                {this.props.children}
+                <div className="container-title">
+                    {this.props.title}
+                </div>
+                <div>
+                    {this.props.children}
+                </div>
+                
             </div>
         )
     }
