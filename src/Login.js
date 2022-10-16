@@ -30,12 +30,16 @@ export default class Login extends React.Component {
     }
 
     render() {
+        const bgButton = {
+            backgroundColor: this.state.pass.length <= 8 ? 'red' : 'green'
+        }
+
         return (
                 <form>
                     <input type="text" name='user' value={this.state.user} onChange={this.handleInput}></input>
                     <input type="password" name='pass'  value={this.state.pass} onChange={this.handleInput}></input>
                     <input type="checkbox" name='remember' checked={this.state.remember} onChange={this.handleInput}></input>
-                    <button disabled={!this.state.user || !this.state.pass}>Login</button>
+                    <button disabled={!this.state.user || !this.state.pass} style={bgButton} >Login</button>
                     <button onClick={this.resetInput}>Reset</button>
 
                 </form>
