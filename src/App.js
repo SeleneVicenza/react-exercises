@@ -8,25 +8,33 @@ import InteractiveWelcome from "./InteractiveWelcome";
 import Login from "./Login";
 import TodoList from "./TodoList";
 import UncontrolledLogin from "./UncontrolledLogin";
-import {Welcome} from "./Welcome";
+import { Welcome } from "./Welcome";
 
 
 export class App extends React.Component {
-    render(){
-        return(
+    render() {
+        return (
             <Container title="My App">
-               <Hello />
-               <Welcome name={<strong>Selene</strong>} />
-               <Counter />
-               <ClickCounter />
-               <ClickTracker />
-               <InteractiveWelcome />
-               <Login />
-               <UncontrolledLogin />
-               <TodoList />
-            </Container> 
+                <Hello />
+                <Welcome name={<strong>Selene</strong>} />
+                <Counter />
+                <ClickCounter />
+                <ClickTracker />
+                <InteractiveWelcome />
+                <Login />
+                <UncontrolledLogin />
+                <TodoList render={(items, remove) => {
+                    const element = items.map((item, index) => {
+                        return (<div>
+                            <li key={index}>{item}</li>
+                            <button onClick={() => remove(index)}>Remove</button>
+                        </div>)
+                    })
+                    return <ul>{element}</ul>
+                }} />
+            </Container>
         );
-    }   
+    }
 }
 
 // export default function App() {

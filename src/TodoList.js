@@ -32,19 +32,11 @@ export default class TodoList extends React.Component {
     render() {
         return (
             <div>
-
-                <ul>
                     <input type='text' onChange={this.saveInput} value={this.state.input}></input>
                     <button onClick={this.addTask}>Add task</button>
                     <button onClick={this.clearArray}>Reset</button>
-                    {this.state.items.map((item, index) => {
-                        return (<div>
-                            <li key={index}>{item}</li>
-                            <button onClick={() => this.removeListItem(index)}>Remove</button>
-                        </div>)
-
-                    })}
-                </ul>
+                    {this.props.render(this.state.items, this.removeListItem)}
+                
             </div>
         )
     }
