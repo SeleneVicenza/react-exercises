@@ -12,11 +12,16 @@ import { Welcome } from "./Welcome";
 
 
 export class App extends React.Component {
+    
+
     render() {
         return (
-            <Container title="My App">
+            <div>
                 <Hello />
-                <Welcome name={<strong>Selene</strong>} />
+                <Container title="my app">
+                    <Welcome name={<strong>Selene</strong>} />
+                </Container>
+                
                 <Counter />
                 <ClickCounter />
                 <ClickTracker />
@@ -32,7 +37,10 @@ export class App extends React.Component {
                     })
                     return <ul>{element}</ul>
                 }} />
-            </Container>
+                
+                
+
+            </div>
         );
     }
 }
