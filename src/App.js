@@ -40,7 +40,7 @@ export class App extends React.Component {
                     return <ul>{element}</ul>
                 }} />
                 
-                <Sum numbers={[4, 5]}/>
+                <Sum />
 
             </div>
         );
