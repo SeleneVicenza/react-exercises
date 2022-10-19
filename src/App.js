@@ -6,6 +6,7 @@ import Counter from "./Counter";
 import Hello from "./Hello";
 import InteractiveWelcome from "./InteractiveWelcome";
 import Login from "./Login";
+import Sum from "./Sum";
 import TodoList from "./TodoList";
 import UncontrolledLogin from "./UncontrolledLogin";
 import Welcome from "./Welcome";
@@ -39,7 +40,7 @@ export class App extends React.Component {
                     return <ul>{element}</ul>
                 }} />
                 
-                
+                <Sum numbers={[4, 5]}/>
 
             </div>
         );
