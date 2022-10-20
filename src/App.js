@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ClickCounter from "./ClickCounter";
 import ClickTracker from "./ClickTracker";
 import Container from "./Container";
@@ -12,10 +12,15 @@ import UncontrolledLogin from "./UncontrolledLogin";
 import Welcome from "./Welcome";
 
 
-export class App extends React.Component {
     
 
-    render() {
+    export function App() {
+
+        const [showComponent, setShowcomponent] = useState(true)
+        function unmount() {
+            setShowcomponent(s => !s)
+        }
+
         return (
             <div>
                 <Hello />
@@ -24,7 +29,8 @@ export class App extends React.Component {
 
                 </Container>
                 <Welcome name={<strong>Selene</strong>} />
-                <Counter />
+                <button onClick={unmount}>unmount</button>
+                {showComponent && <Counter />}
                 <ClickCounter />
                 <ClickTracker />
                 <InteractiveWelcome />
@@ -44,8 +50,8 @@ export class App extends React.Component {
 
             </div>
         );
-    }
 }
+
 
 // export default function App() {
 //     return (
