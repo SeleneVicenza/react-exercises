@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ClickCounter from "./ClickCounter";
 import ClickTracker from "./ClickTracker";
 import Container from "./Container";
@@ -18,7 +18,13 @@ import Welcome from "./Welcome";
 
     
 
-export function App() {
+    export function App() {
+
+        const [showComponent, setShowcomponent] = useState(true)
+        function unmount() {
+            setShowcomponent(s => !s)
+        }
+
         return (
             <div>
                 <Hello />
@@ -27,7 +33,8 @@ export function App() {
 
                 </Container>
                 <Welcome name={<strong>Selene</strong>} />
-                <Counter />
+                <button onClick={unmount}>unmount</button>
+                {showComponent && <Counter />}
                 {/* <ClickCounter onCounterChange={(count) =>{return console.log(count)}}/> */}
                 <ClickTracker />
                 <InteractiveWelcome />
