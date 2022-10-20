@@ -31,7 +31,7 @@ import Welcome from "./Welcome";
                 <Welcome name={<strong>Selene</strong>} />
                 <button onClick={unmount}>unmount</button>
                 {showComponent && <Counter />}
-                <ClickCounter />
+                {/* <ClickCounter onCounterChange={(count) =>{return console.log(count)}}/> */}
                 <ClickTracker />
                 <InteractiveWelcome />
                 <Login />
