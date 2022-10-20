@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect} from "react"
 
 // export default class ClickCounter extends React.Component {
 //     state = {
@@ -25,8 +25,12 @@ import React, { useState } from "react"
 // }
 
 
-export default function ClickCounter({initialValue = 0}) {
+export default function ClickCounter({initialValue = 0}, props) {
     const [count, setCount] = useState(initialValue)
+
+    useEffect(()=>{
+        return props.onCounterChange(count)
+    },  [count, props])
 
     function clickCounter() {
         setCount(count => count + 1)

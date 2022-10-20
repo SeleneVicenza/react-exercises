@@ -11,6 +11,9 @@ import TodoList from "./TodoList";
 import UncontrolledLogin from "./UncontrolledLogin";
 import Welcome from "./Welcome";
 
+// onCounterChange = (count) =>{
+//     console.log(count)
+// }
 
 export class App extends React.Component {
     
@@ -25,7 +28,7 @@ export class App extends React.Component {
                 </Container>
                 <Welcome name={<strong>Selene</strong>} />
                 <Counter />
-                <ClickCounter />
+                <ClickCounter onCounterChange={(click) =>{console.log(click)}}/>
                 <ClickTracker />
                 <InteractiveWelcome />
                 <Login />
