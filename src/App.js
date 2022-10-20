@@ -18,44 +18,43 @@ import Welcome from "./Welcome";
 
     
 
-// export function App() {
-//         return (
-//             <div>
-//                 <Hello />
-//                 <Container title="my app">
+export function App() {
+        return (
+            <div>
+                <Hello />
+                <Container title="my app">
                     
 
-//                 </Container>
-//                 <Welcome name={<strong>Selene</strong>} />
-//                 <Counter />
-//                 <ClickCounter onCounterChange={(count) =>{return console.log(count)}}/>
-//                 <ClickTracker />
-//                 <InteractiveWelcome />
-//                 <Login />
-//                 <UncontrolledLogin />
-//                 <TodoList render={(items, remove) => {
-//                     const element = items.map((item, index) => {
-//                         return (<div>
-//                             <li key={index}>{item}</li>
-//                             <button onClick={() => remove(index)}>Remove</button>
-//                         </div>)
-//                     })
-//                     return <ul>{element}</ul>
-//                 }} />
+                </Container>
+                <Welcome name={<strong>Selene</strong>} />
+                <Counter />
+                {/* <ClickCounter onCounterChange={(count) =>{return console.log(count)}}/> */}
+                <ClickTracker />
+                <InteractiveWelcome />
+                <Login />
+                <UncontrolledLogin />
+                <TodoList render={(items, remove) => {
+                    const element = items.map((item, index) => {
+                        return (<div>
+                            <li key={index}>{item}</li>
+                            <button onClick={() => remove(index)}>Remove</button>
+                        </div>)
+                    })
+                    return <ul>{element}</ul>
+                }} />
                 
-//                 <Sum />
+                <Sum />
 
-//             </div>
-//         );
-// }
-
-
-export function App() {
-    return (
-        <div>
-            <Hello />
-            <Welcome name="Selene" />
-            <ClickCounter onCounterChange={(count) =>{return console.log(count)}}/>
-        </div>
-    );
+            </div>
+        );
 }
+
+
+// export default function App() {
+//     return (
+//         <div>
+//             <Hello />
+//             <Welcome name="Selene" />
+//         </div>
+//     );
+// }
