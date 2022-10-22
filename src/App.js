@@ -4,6 +4,7 @@ import ClickTracker from "./ClickTracker";
 import Container from "./Container";
 import Counter from "./Counter";
 import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 import Hello from "./Hello";
 import InteractiveWelcome from "./InteractiveWelcome";
 import Login from "./Login";
@@ -53,6 +54,7 @@ import Welcome from "./Welcome";
                 
                 <Sum />
                 <GithubUser username='SeleneVicenza'/>
+                <GithubUserList/>
 
             </div>
         );
