@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from "react"
+import { useCounter } from "./useCounter"
 
 // export default class ClickCounter extends React.Component {
 //     state = {
@@ -26,21 +27,14 @@ import React, { useState, useEffect} from "react"
 
 
 export default function ClickCounter({initialValue = 0}, props) {
-    const [count, setCount] = useState(initialValue)
-
-    useEffect(()=>{
-        return props.onCounterChange(count)
-    },  [count, props])
-
-    function clickCounter() {
-        setCount(count => count + 1)
-    }
-    
-
+    const { counter, onIncrement, onReset, onDecrement } = useCounter(initialValue)
     return (
             <div>
-                <button onClick={clickCounter}>Click counter</button>
-                <h2>count: {count}</h2>
+                <h2>count: {counter}</h2>
+                <button onClick={onIncrement}>Incdrement</button>
+                <button onClick={onDecrement}>Decrement</button>
+                <button onClick={onReset}>Reset</button>
+
             </div>
     )
 }
