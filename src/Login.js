@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useLogin } from "./useLogin";
 
 // export default class Login extends React.Component {
 //     constructor(props) {
@@ -47,39 +47,43 @@ import React, { useState } from "react";
 //     }
 // }
 
+
+
 export default function Login() {
-    const [data, setData] = useState({
-        user: '',
-        pass: '',
-        remember: true,
-    });
+    // const [data, setData] = useState({
+    //     user: '',
+    //     pass: '',
+    //     remember: true,
+    // });
 
-    function handleInput(e) {
-        const {name, value, type, checked} = e.target
-        setData((data) => {
-            return {
-                ...data,
-                [name] : type === 'checkbox' ? checked : value,
-            }
-        })
-    }
+    // function handleInput(e) {
+    //     const {name, value, type, checked} = e.target
+    //     setData((data) => {
+    //         return {
+    //             ...data,
+    //             [name] : type === 'checkbox' ? checked : value,
+    //         }
+    //     })
+    // }
+ 
 
+    // function resetInput() {
+    //     setData({
+    //         user: '',
+    //         pass: '',
+    //         remember: true,
+    //     }) 
+    // }
 
-    function resetInput() {
-        setData({
-            user: '',
-            pass: '',
-            remember: true,
-        }) 
-    }
-
+    const {data, onInput, onReset} = useLogin()
+    
     return (
             <form>
-                <input type="text" name='user' value={data.user} onChange={handleInput}></input>
-                <input type="password" name='pass'  value={data.pass} onChange={handleInput}></input>
-                <input type="checkbox" name='remember' checked={data.remember} onChange={handleInput}></input>
+                <input type="text" name='user' value={data.user} onChange={onInput}></input>
+                <input type="password" name='pass'  value={data.pass} onChange={onInput}></input>
+                {/* <input type="checkbox" name='remember' checked={data.remember} onChange={handleInput}></input> */}
                 <button disabled={!data.user || !data.pass} >Login</button>
-                <button onClick={resetInput}>Reset</button>
+                <button onClick={onReset}>Reset</button>
             </form>
     )
 } 
