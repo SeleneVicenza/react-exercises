@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CarDetails from "./CarDetails";
 import ClickCounter from "./ClickCounter";
 import ClickTracker from "./ClickTracker";
 import Container from "./Container";
@@ -55,6 +56,7 @@ import Welcome from "./Welcome";
                 <Sum />
                 <GithubUser username='SeleneVicenza'/>
                 <GithubUserList/>
+                <CarDetails />
 
             </div>
         );
