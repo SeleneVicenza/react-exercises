@@ -4,6 +4,7 @@ import ClickCounter from "./ClickCounter";
 import ClickTracker from "./ClickTracker";
 import Container from "./Container";
 import Counter from "./Counter";
+import FilteredList from "./FilteredList";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import Hello from "./Hello";
@@ -57,6 +58,7 @@ import Welcome from "./Welcome";
                 <GithubUser username='SeleneVicenza'/>
                 <GithubUserList/>
                 <CarDetails />
+                <FilteredList />
 
             </div>
         );
