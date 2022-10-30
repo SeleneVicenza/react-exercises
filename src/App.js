@@ -15,6 +15,7 @@ import TodoList from "./TodoList";
 import UncontrolledLogin from "./UncontrolledLogin";
 import Welcome from "./Welcome";
 import { Routes, Route } from "react-router-dom";
+import ShowGithubUser from "./ShowGithubUser";
 
 // onCounterChange = (count) =>{
 //     console.log(count)
@@ -40,6 +41,7 @@ import { Routes, Route } from "react-router-dom";
                 <Routes>
                     <Route path='/welcome' element={<Welcome />}/>
                     <Route path='/counter' element={<Counter />}/>
+                    <Route path='/:username' element={<ShowGithubUser />}/>
                 </Routes>
                 
                 {/* <Welcome name={<strong>Selene</strong>} />
