@@ -26,10 +26,10 @@ export function GithubUserList() {
                     return (<div>
                         <li key={index}>
 
-                            <Link to={item} key={index} user={item} >{item}</Link>
+                            <Link to=':username' key={index} user={item} >{item}</Link>
                             <Outlet />
                         </li>
-                        <Outlet />
+                        
                     </div>)
                 })}
             </ul>

@@ -22,38 +22,39 @@ import ShowGithubUser from "./ShowGithubUser";
 // }
 
 
-    
 
-    export function App() {
 
-        const [showComponent, setShowcomponent] = useState(true)
-        function unmount() {
-            setShowcomponent(s => !s)
-        }
+export function App() {
 
-        return (
-            <div>
-                <Hello />
-                <Container title="my app">
-                    
+    const [showComponent, setShowcomponent] = useState(true)
+    function unmount() {
+        setShowcomponent(s => !s)
+    }
 
-                </Container>
-                <Link to='/welcome'> To Welcome</Link>
-                <Link to='/counter'> To Counter</Link>
-                <Link to='/user'> To user</Link>
-                <Routes>
-                    <Route path='/' element={<Welcome />}/>
-                    <Route path='/counter' element={<Counter />}/>
-                    <Route path='/user' element={<GithubUserList />}>
-                        <Route path=":username" element={<ShowGithubUser/>}/>
-                    </Route>
-                    <Route path='*' element={<div>
-                        <p>Error</p>
-                        <Link to='/'>return to Home</Link>
-                    </div>}/>
-                </Routes>
-                
-                {/* <Welcome name={<strong>Selene</strong>} />
+    return (
+        <div>
+            <Hello />
+            <Container title="my app">
+
+
+            </Container>
+            <Link to='/welcome'> To Welcome</Link>
+            <Link to='/counter'> To Counter</Link>
+            <Link to='/user'> To user</Link>
+            <Routes>
+                <Route path='/' element={<Welcome />} />
+                <Route path='/counter' element={<Counter />} />
+                <Route path='/user' element={<GithubUserList />}>
+                    <Route index element={<p>Add user</p>} />
+                    <Route path=":username" element={<ShowGithubUser />} />
+                </Route>
+                <Route path='*' element={<div>
+                    <p>Error</p>
+                    <Link to='/'>return to Home</Link>
+                </div>} />
+            </Routes>
+
+            {/* <Welcome name={<strong>Selene</strong>} />
                 <button onClick={unmount}>unmount</button>
                 {showComponent && <Counter />}
                 <ClickCounter />
@@ -77,8 +78,8 @@ import ShowGithubUser from "./ShowGithubUser";
                 <CarDetails />
                 <FilteredList /> */}
 
-            </div>
-        );
+        </div>
+    );
 }
 
 
