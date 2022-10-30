@@ -7,7 +7,7 @@ export default function useGithubUser(username){
         .then(response => response.json())
     }
 
-    const {data, err} = useSWR(`https://api.github.com/users/${username}`, fetchApi)
+    const {data, err} = useSWR(username ? `https://api.github.com/users/${username}` : null, fetchApi)
 
     
 
