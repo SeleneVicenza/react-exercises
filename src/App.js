@@ -39,6 +39,7 @@ import { Routes, Route } from "react-router-dom";
                 </Container>
                 <Routes>
                     <Route path='/welcome' element={<Welcome />}/>
+                    <Route path='/counter' element={<Counter />}/>
                 </Routes>
                 
                 {/* <Welcome name={<strong>Selene</strong>} />
