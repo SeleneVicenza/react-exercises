@@ -14,6 +14,7 @@ import Sum from "./Sum";
 import TodoList from "./TodoList";
 import UncontrolledLogin from "./UncontrolledLogin";
 import Welcome from "./Welcome";
+import { Routes, Route } from "react-router-dom";
 
 // onCounterChange = (count) =>{
 //     console.log(count)
@@ -36,7 +37,11 @@ import Welcome from "./Welcome";
                     
 
                 </Container>
-                <Welcome name={<strong>Selene</strong>} />
+                <Routes>
+                    <Route path='/welcome' element={<Welcome />}/>
+                </Routes>
+                
+                {/* <Welcome name={<strong>Selene</strong>} />
                 <button onClick={unmount}>unmount</button>
                 {showComponent && <Counter />}
                 <ClickCounter />
@@ -58,7 +63,7 @@ import Welcome from "./Welcome";
                 <GithubUser username='SeleneVicenza'/>
                 <GithubUserList/>
                 <CarDetails />
-                <FilteredList />
+                <FilteredList /> */}
 
             </div>
         );
