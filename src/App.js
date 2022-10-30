@@ -40,11 +40,15 @@ import ShowGithubUser from "./ShowGithubUser";
                 </Container>
                 <Link to='/welcome'> To Welcome</Link>
                 <Link to='/counter'> To Counter</Link>
-                <Link to='/:username'> To user</Link>
+                <Link to='/user:username'> To user</Link>
                 <Routes>
-                    <Route path='/welcome' element={<Welcome />}/>
+                    <Route path='/' element={<Welcome />}/>
                     <Route path='/counter' element={<Counter />}/>
-                    <Route path='/:username' element={<ShowGithubUser />}/>
+                    <Route path='/user:username' element={<ShowGithubUser />}/>
+                    <Route path='*' element={<div>
+                        <p>Error</p>
+                        <Link to='/'>return to Home</Link>
+                    </div>}/>
                 </Routes>
                 
                 {/* <Welcome name={<strong>Selene</strong>} />
