@@ -1,12 +1,9 @@
-import { useEffect } from "react"
+
 import useGithubUser from "./useGithubUser"
 
 export function GithubUser({username}) {
-    const {dati, errore, loading, onFetch} = useGithubUser(username)
+    const {dati, errore, loading} = useGithubUser(username)
 
-    useEffect(() => {
-        onFetch()
-    }, [])
 
     return <div>
         {dati && <div>user {dati.name}</div>}
