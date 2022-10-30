@@ -14,7 +14,7 @@ import Sum from "./Sum";
 import TodoList from "./TodoList";
 import UncontrolledLogin from "./UncontrolledLogin";
 import Welcome from "./Welcome";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import ShowGithubUser from "./ShowGithubUser";
 
 // onCounterChange = (count) =>{
@@ -38,6 +38,9 @@ import ShowGithubUser from "./ShowGithubUser";
                     
 
                 </Container>
+                <Link to='/welcome'> To Welcome</Link>
+                <Link to='/counter'> To Counter</Link>
+                <Link to='/:username'> To user</Link>
                 <Routes>
                     <Route path='/welcome' element={<Welcome />}/>
                     <Route path='/counter' element={<Counter />}/>
